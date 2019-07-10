@@ -3,9 +3,9 @@ import React from 'react';
 
 
 const Movies = (props) => {
-    const movies = props.results
 
-    const results = movies.map(item => (
+
+    const results = props.results.map(item => (
 
         < div key={item.id} >
             <h4>{item.title} </h4>
@@ -15,6 +15,7 @@ const Movies = (props) => {
 
         </div >
     ))
+
 
 
     return (

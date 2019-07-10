@@ -11,7 +11,8 @@ class App extends Component {
   }
 
   handleChange = (e) => {
-    const value = e.target.value
+    e.preventDefault();
+    const value = e.target.value.toLowerCase()
     const ApiKey = "5259c8949c37b92e4bfb71d3a1948220"
     console.log(value)
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=${value}`)
@@ -20,13 +21,22 @@ class App extends Component {
         console.log(data.results)
 
         this.setState({
-          movies: data.results
+          movies: data.results,
+          search: value
         })
+
       })
   }
 
+
+
+
+
+
+
+
   render() {
-    const movies = this.state.movies
+
 
 
     return (
@@ -36,10 +46,10 @@ class App extends Component {
         </div>
         <div>
           <label htmlFor="search">Wyszukaj film</label>
-          <input onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search"></input>
+          <input onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
         </div>
         <h4>
-          <Movies results={movies} />
+          <Movies results={this.state.movies} />
         </h4>
       </>
     )
