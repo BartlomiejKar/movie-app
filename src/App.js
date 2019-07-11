@@ -16,7 +16,10 @@ class App extends Component {
     const ApiKey = "5259c8949c37b92e4bfb71d3a1948220"
     console.log(value)
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=${ApiKey}&query=${value}`)
+
       .then(response => response.json())
+
+
 
       .then(data => {
         console.log(data.results)
