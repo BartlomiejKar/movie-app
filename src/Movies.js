@@ -5,7 +5,7 @@ import React from 'react';
 const Movies = (props) => {
 
 
-    const results = props.results.map(item => (
+    const results = (props.results || []).map(item => (
 
         < div key={item.id} >
             <h4>{item.title} </h4>
@@ -14,6 +14,7 @@ const Movies = (props) => {
             <p>Ocena internautów: {item.vote_average}</p>
 
         </div >
+
     ))
 
 
