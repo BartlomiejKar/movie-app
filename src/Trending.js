@@ -1,33 +1,33 @@
 import React from 'react';
 
 
+const Trending = (props) => {
 
-const Movies = (props) => {
 
+    const trending = (props.popular).map(item => (
 
-    const results = (props.results || []).map(item => (
 
         < div key={item.id} >
-            <h4>{item.title || item.name} </h4>{
-
+            <h4>{item.name || item.title}</h4>{
                 item.poster_path !== null ? <img src={`https://image.tmdb.org/t/p/w185${item.poster_path}`} alt="poster of movie" /> : <img src="https://pics.clipartpng.com/midle/No_Photography_Prohibition_Sign_PNG_Clipart-829.png" alt="empty" style={{ width: 185 }} />
             }
-            <p>Ocena internautów: {item.vote_average}</p>
 
-        </div >
 
+        </ div>
     ))
-
-
 
     return (
         <div>
             <ul>
-                {results}
+                {trending}
             </ul>
         </div>
     )
-
 }
 
-export default Movies
+
+
+
+
+export default Trending
+
