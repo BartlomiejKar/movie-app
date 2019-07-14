@@ -1,3 +1,60 @@
 body {
   text-align: center;
 }
+
+.header {
+  display: grid;
+  background-color: yellow;
+  height: 100px;
+}
+.title {
+  
+  padding: 10px 30px 30px 20px;
+  grid-area: 1/1/1/1;
+ 
+}
+.logo {
+ 
+ grid-area: 1/2/1/2;
+  width: 100px;
+  height: 100px;
+}
+
+.navigation {
+  grid-area: 1/1/1/1;
+
+ 
+}
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  
+  }
+.link:hover{
+  color:red;
+}
+
+.container_movies {
+  
+  background-color: red;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  
+ 
+  
+}
+.trend {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border: 1px black solid;
+  
+  
+}
+.div_trend {
+  
+  border: 1px red solid;
+  margin: 5px;
+  
+}
+
+

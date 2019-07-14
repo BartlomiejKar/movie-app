@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Movies from "./Movies"
 import Trending from "./Trending"
+import filmy from "./filmy.jpeg"
+
 
 
 class App extends Component {
@@ -32,7 +34,8 @@ class App extends Component {
       })
   }
 
-  // search = () => {
+
+
 
   componentDidMount() {
     fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=5259c8949c37b92e4bfb71d3a1948220`)
@@ -48,6 +51,7 @@ class App extends Component {
       })
 
   }
+
   render() {
 
 
@@ -55,20 +59,25 @@ class App extends Component {
 
     return (
       <>
-        <div>
-          MOVIE BROWSER
+        <div class="header">
+          <nav class="navigation">
+            <a href="#popular" class="link">Najpopularniejsze filmy tygodnia</a>
+          </nav>
+          <img class="logo" src={filmy} alt="logo" />
+          <h1 class="title">MOVIES BROWSER</h1>
         </div>
-        <div>
+        <div class="search">
           <label htmlFor="search">Wyszukaj film</label>
           <input onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
         </div>
-
-        <h4>
-          <Movies results={this.state.movies} />
-        </h4>
-        <div>
-          Najpopularniejsze filmy w tygodniu:
+        <div >
           <h4 >
+            <Movies results={this.state.movies} />
+          </h4>
+        </div>
+        <div >
+          Najpopularniejsze filmy w tygodniu:
+          <h4 id="popular">
 
             <Trending popular={this.state.trending} />
 
