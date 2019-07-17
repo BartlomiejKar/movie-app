@@ -4,8 +4,9 @@ body {
 
 .header {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   background-color: yellow;
-  height: 100px;
+  height: 100%;
 }
 .title {
   
@@ -18,6 +19,7 @@ body {
  grid-area: 1/2/1/2;
   width: 100px;
   height: 100px;
+margin: 30px;
 }
 
 .navigation {
@@ -46,7 +48,7 @@ body {
 .trend {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  border: 1px black solid;
+  
   
   
 }
@@ -56,5 +58,60 @@ body {
   margin: 5px;
   
 }
+.movies_div{
+  margin: 5px;
+}
+.input{
+  margin-left: 10px;
+  border-radius: 20ch;
+}
+.button {
+  border-radius: 20ch;
+  background-color: greenyellow;
+  padding: 10px;
+  transition: transform .1s linear;
+}
+.button:hover{
+  background: green;
+  transform: scale(1.09)
+}
+
+@media (max-width: 480px) {
+  .header {
+    display: grid;
+    background-color: yellow;
+    height: 200px;
+  }
+  .logo {
+    height: 100px;
+  }
+  .title {
+  
+    padding: 30px 30px 30px 20px;
+    grid-area: 1/1/1/1;
+  }
+  .container_movies {
+  
+    background-color: red;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+  }
+  .trend {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;}
+}
+
+@media (max-width: 410px) {
+  .container_movies {
+  
+    background-color: red;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .trend {
+    display: grid;
+    grid-template-columns: 1fr;}
+}
+
 
 

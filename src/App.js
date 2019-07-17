@@ -6,14 +6,30 @@ import filmy from "./filmy.jpeg"
 
 
 
+
 class App extends Component {
 
   state = {
     movies: [],
     search: "",
     trending: [],
+    active: "false",
 
   }
+
+  Click = () => {
+    console.log("działa")
+
+
+    this.setState({
+      active: !this.state.active
+    })
+
+
+  }
+
+
+
 
   handleChange = (e) => {
 
@@ -43,10 +59,12 @@ class App extends Component {
 
       .then(data => {
         console.log(data.results)
+
         this.setState({
           trending: data.results,
 
         })
+
 
       })
 
@@ -59,16 +77,16 @@ class App extends Component {
 
     return (
       <>
-        <div class="header">
-          <nav class="navigation">
-            <a href="#popular" class="link">Najpopularniejsze filmy tygodnia</a>
+        <div className="header">
+          <nav className="navigation">
+            <a href="#popular" className="link">Najpopularniejsze filmy tygodnia</a>
           </nav>
-          <img class="logo" src={filmy} alt="logo" />
-          <h1 class="title">MOVIES BROWSER</h1>
+          <img className="logo" src={filmy} alt="logo" />
+          <h1 className="title">MOVIES BROWSER</h1>
         </div>
-        <div class="search">
-          <label htmlFor="search">Wyszukaj film</label>
-          <input onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
+        <div className="search">
+          <label htmlFor="search"><strong>Wyszukaj film</strong></label>
+          <input className="input" onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
         </div>
         <div >
           <h4 >
@@ -76,10 +94,14 @@ class App extends Component {
           </h4>
         </div>
         <div >
-          Najpopularniejsze filmy w tygodniu:
+          <strong>
+            Najpopularniejsze filmy w tygodniu:
+          </strong>
           <h4 id="popular">
 
-            <Trending popular={this.state.trending} />
+            <Trending active={this.state.active} handleClick={this.Click} popular={this.state.trending} />
+
+
 
 
           </h4>
