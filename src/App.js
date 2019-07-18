@@ -59,6 +59,11 @@ class App extends Component {
 
       .then(data => {
         console.log(data.results)
+        console.log(data.results[0].id)
+        console.log(data.results[1].overview)
+
+
+
 
         this.setState({
           trending: data.results,
@@ -69,6 +74,7 @@ class App extends Component {
       })
 
   }
+
 
   render() {
 
