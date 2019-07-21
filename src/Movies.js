@@ -4,6 +4,7 @@ import './App.css';
 
 
 
+
 const Movies = (props) => {
 
 
@@ -12,7 +13,7 @@ const Movies = (props) => {
         < div className="movies_div" key={item.id} >
             <h4>{item.title || item.name} </h4>{
 
-                item.poster_path !== null ? <img src={`https://image.tmdb.org/t/p/w185${item.poster_path}`} alt="poster of movie" /> : <img src="https://github.com/BartlomiejKar/movie-app/blob/master/src/img/no-photo-svgrepo-com.svg" alt="empty" style={{ width: 185 }} />
+                item.poster_path !== null ? <img src={`https://image.tmdb.org/t/p/w185${item.poster_path}`} alt="poster of movie" /> : <img src="https://www.slodkiprzystanek.pl/img/no-photo-available.png" alt="empty" style={{ width: 185 }} />
             }
             <p>Ocena internautów: {item.vote_average}</p>
 

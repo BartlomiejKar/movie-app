@@ -13,20 +13,20 @@ class App extends Component {
     movies: [],
     search: "",
     trending: [],
-    active: "false",
+    // active: "false",
 
   }
 
-  Click = () => {
-    console.log("działa")
+  // Click = () => {
+  //   console.log("działa")
 
 
-    this.setState({
-      active: !this.state.active
-    })
+  //   this.setState({
+  //     active: !this.state.active
+  //   })
 
 
-  }
+  // }
 
 
 
