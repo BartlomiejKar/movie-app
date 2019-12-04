@@ -28,20 +28,14 @@ class App extends Component {
 
   // }
 
-
-
-
   handleChange = (e) => {
-
     const value = e.target.value.toLowerCase()
     const ApiKey = "5259c8949c37b92e4bfb71d3a1948220"
     console.log(value)
     fetch(`https://api.themoviedb.org/3/search/multi?api_key=${ApiKey}&query=${value}`)
-
       .then(response => response.json())
       .then(data => {
         console.log(data.results)
-
         this.setState({
           movies: data.results,
           search: value,
@@ -49,38 +43,19 @@ class App extends Component {
 
       })
   }
-
-
-
-
   componentDidMount() {
     fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=5259c8949c37b92e4bfb71d3a1948220`)
       .then(response => response.json())
-
       .then(data => {
         console.log(data.results)
         console.log(data.results[0].id)
         console.log(data.results[1].overview)
-
-
-
-
         this.setState({
           trending: data.results,
-
         })
-
-
       })
-
   }
-
-
   render() {
-
-
-
-
     return (
       <>
         <div className="header">
@@ -104,19 +79,11 @@ class App extends Component {
             Najpopularniejsze filmy w tygodniu:
           </strong>
           <h4 id="popular">
-
             <Trending active={this.state.active} handleClick={this.Click} popular={this.state.trending} />
-
-
-
-
           </h4>
         </div>
       </>
     )
-
-
-
   }
 }
 export default App;
