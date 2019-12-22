@@ -12,21 +12,10 @@ class App extends Component {
   state = {
     movies: [],
     search: "",
-    trending: [],
-    // active: "false",
-
+    trending: []
   }
 
-  // Click = () => {
-  //   console.log("działa")
 
-
-  //   this.setState({
-  //     active: !this.state.active
-  //   })
-
-
-  // }
 
   handleChange = (e) => {
     const value = e.target.value.toLowerCase()
@@ -43,7 +32,10 @@ class App extends Component {
 
       })
   }
-  componentDidMount() {
+
+
+
+  GetMovies = () => {
     fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=5259c8949c37b92e4bfb71d3a1948220`)
       .then(response => response.json())
       .then(data => {
@@ -55,7 +47,11 @@ class App extends Component {
         })
       })
   }
+  componentDidMount() {
+    this.GetMovies()
+  }
   render() {
+
     return (
       <>
         <div className="header">
