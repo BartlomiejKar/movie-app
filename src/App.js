@@ -36,7 +36,8 @@ class App extends Component {
 
 
   GetMovies = () => {
-    fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=5259c8949c37b92e4bfb71d3a1948220`)
+    const ApiKey = "5259c8949c37b92e4bfb71d3a1948220"
+    fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${ApiKey}`)
       .then(response => response.json())
       .then(data => {
         console.log(data.results)
@@ -75,7 +76,7 @@ class App extends Component {
             Najpopularniejsze filmy w tygodniu:
           </strong>
           <h4 id="popular">
-            <Trending active={this.state.active} handleClick={this.Click} popular={this.state.trending} />
+            <Trending handleClick={this.Click} popular={this.state.trending} />
           </h4>
         </div>
       </>
