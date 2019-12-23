@@ -57,14 +57,14 @@ class App extends Component {
       <>
         <div className="header">
           <nav className="navigation">
-            <a href="#popular" className="link">Najpopularniejsze filmy tygodnia</a>
+            <a href="#popular" className="navigiation__link">Najpopularniejsze filmy tygodnia</a>
           </nav>
-          <img className="logo" src={filmy} alt="logo" />
-          <h1 className="title">MOVIES BROWSER</h1>
+          <img className="header__logo" src={filmy} alt="logo" />
+          <h1 className="header__title">MOVIES BROWSER</h1>
         </div>
         <div className="search">
           <label htmlFor="search"><strong>Wyszukaj film</strong></label>
-          <input className="input" onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
+          <input className="search__input" onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
         </div>
         <div >
           <h4 >

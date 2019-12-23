@@ -8,13 +8,13 @@ body {
   background-color: yellow;
   height: 100%;
 }
-.title {
+.header__title {
   
   padding: 10px 30px 30px 20px;
   grid-area: 1/1/1/1;
  
 }
-.logo {
+.header__logo {
  
  grid-area: 1/2/1/2;
   width: 100px;
