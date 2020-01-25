@@ -11,10 +11,9 @@ const Trending = (props) => {
     ))
     return (
         <div className="trend">
-
             {trending}
         </div>
     )
 }
-export default Trending
+export default Trending;
 

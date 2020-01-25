@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import '../src/css/App.css';
 
 const Movies = (props) => {
     const results = (props.results || []).map(item => (

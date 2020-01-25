@@ -1,0 +1,17 @@
+
+  .container_movies {
+    background-color: red;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .trend {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .div_trend {
+    border: 1px red solid;
+    margin: 5px;
+  }
+  .movies_div{
+    margin: 5px;
+  }

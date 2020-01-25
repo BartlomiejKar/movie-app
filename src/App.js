@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
 import Movies from "./Movies"
 import Trending from "./Trending"
 import filmy from "./filmy.jpeg"
@@ -12,19 +12,20 @@ class App extends Component {
   state = {
     movies: [],
     search: "",
-    trending: []
+    trending: [],
+    ApiKey: "5259c8949c37b92e4bfb71d3a1948220"
   }
 
 
 
   handleChange = (e) => {
     const value = e.target.value.toLowerCase()
-    const ApiKey = "5259c8949c37b92e4bfb71d3a1948220"
-    console.log(value)
+    const { ApiKey } = this.state
+    // console.log(value)
     fetch(`https://api.themoviedb.org/3/search/multi?api_key=${ApiKey}&query=${value}`)
       .then(response => response.json())
       .then(data => {
-        console.log(data.results)
+        // console.log(data.results)
         this.setState({
           movies: data.results,
           search: value,
@@ -36,13 +37,13 @@ class App extends Component {
 
 
   GetMovies = () => {
-    const ApiKey = "5259c8949c37b92e4bfb71d3a1948220"
+    const { ApiKey } = this.state
     fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${ApiKey}`)
       .then(response => response.json())
       .then(data => {
-        console.log(data.results)
-        console.log(data.results[0].id)
-        console.log(data.results[1].overview)
+        // console.log(data.results)
+        // console.log(data.results[0].id)
+        // console.log(data.results[1].overview)
         this.setState({
           trending: data.results,
         })
