@@ -18,21 +18,28 @@ class App extends Component {
 
 
 
+
   handleChange = (e) => {
     const value = e.target.value.toLowerCase()
+    this.setState({
+      search: value
+    })
     const { ApiKey } = this.state
-    // console.log(value)
+
     fetch(`https://api.themoviedb.org/3/search/multi?api_key=${ApiKey}&query=${value}`)
       .then(response => response.json())
       .then(data => {
         // console.log(data.results)
         this.setState({
           movies: data.results,
-          search: value,
+          // search: value,
         })
 
       })
+
   }
+
+
 
 
 
@@ -53,7 +60,6 @@ class App extends Component {
     this.GetMovies()
   }
   render() {
-
     return (
       <>
         <div className="header">
@@ -77,7 +83,7 @@ class App extends Component {
             Najpopularniejsze filmy w tygodniu:
           </strong>
           <h4 id="popular">
-            <Trending handleClick={this.Click} popular={this.state.trending} />
+            <Trending popular={this.state.trending} />
           </h4>
         </div>
       </>
