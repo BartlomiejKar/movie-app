@@ -29,9 +29,8 @@ class App extends Component {
       .then(response =>
         response.json())
       .then(data => {
-        console.log(data.results)
         this.setState({
-          movies: [...data.results],
+          movies: data.results
         })
 
       })
