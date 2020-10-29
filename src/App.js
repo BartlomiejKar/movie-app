@@ -59,13 +59,13 @@ class App extends Component {
   render() {
     return (
       <>
-        <div className="header">
-          <nav className="navigation">
-            <a href="#popular" className="navigiation__link">Najpopularniejsze filmy tygodnia</a>
-          </nav>
+        <header className="header">
           <img className="header__logo" src={filmy} alt="logo" />
-          <h1 className="header__title">MOVIES BROWSER</h1>
-        </div>
+          <h1 className="header__title">MOVIE BROWSER</h1>
+          <nav className="navigation">
+            <a href="#popular" className="navigation__link">Najpopularniejsze filmy tygodnia</a>
+          </nav>
+        </header>
         <div className="search">
           <label htmlFor="search"><strong>Wyszukaj film</strong></label>
           <input className="search__input" onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
