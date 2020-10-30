@@ -76,12 +76,12 @@ class App extends Component {
           </h4>
         </div>
         <div >
-          <strong>
+          {/* <strong>
             Najpopularniejsze filmy w tygodniu:
           </strong>
           <h4 id="popular">
             <Trending popular={this.state.trending} />
-          </h4>
+          </h4> */}
         </div>
       </>
     )

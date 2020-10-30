@@ -44,3 +44,20 @@ font-size: 17px;
   height: 0.5px;
   background-color: #a2aaa2;
 }
+
+.search {
+  width: 100%;
+  text-align: center;
+}
+.search__input {
+  margin-left: 1.4rem;
+}
+
+.search::after {
+  content: "";
+  display: block;
+  height: 1.5px;
+  background-color: #a2aaa2;
+  width: 80%;
+  margin: 5px auto
+}
