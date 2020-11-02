@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './css/App.css';
 import Movies from "./Movies"
 import Trending from "./Trending"
+import Actors from "./Actors"
 import filmy from "./filmy.jpeg"
 
 
@@ -57,6 +58,7 @@ class App extends Component {
     this.GetMovies()
   }
   render() {
+    const { ApiKey } = this.state
     return (
       <>
         <header className="header">
@@ -82,6 +84,9 @@ class App extends Component {
           <h4 id="popular">
             <Trending popular={this.state.trending} />
           </h4> */}
+        </div>
+        <div>
+          <Actors ApiKey={ApiKey} />
         </div>
       </>
     )
