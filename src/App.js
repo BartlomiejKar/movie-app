@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './css/App.css';
 import Movies from "./Movies"
-import Trending from "./Trending"
+// import Trending from "./Trending"
 import Actors from "./Actors"
 import filmy from "./filmy.jpeg"
 
