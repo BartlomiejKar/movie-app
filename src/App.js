@@ -21,21 +21,20 @@ class App extends Component {
 
 
   handleChange = (e) => {
+    const { ApiKey } = this.state
     const value = e.target.value.toLowerCase()
     this.setState({
       search: value
     })
-    const { ApiKey } = this.state
-    fetch(`https://api.themoviedb.org/3/search/multi?api_key=${ApiKey}&query=${value}`)
-      .then(response =>
-        response.json())
-      .then(data => {
-        this.setState({
-          movies: data.results
-        })
-
+    const fetchData = async () => {
+      const response = await fetch(`https://api.themoviedb.org/3/search/multi?api_key=${ApiKey}&query=${value ? value : " "}`)
+      const data = await response.json()
+      const results = data.results
+      this.setState({
+        movies: results
       })
-
+    }
+    fetchData()
 
 
   }
