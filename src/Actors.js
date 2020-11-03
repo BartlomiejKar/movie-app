@@ -23,20 +23,21 @@ const Actors = ({ ApiKey }) => {
     }
 
 
-
-    const ActorsArray = actors ? actors.map(({ id, name, popularity, known_for = [], profile_path }) => {
+    const ActorsArray = actors ? actors.map(({ id, name, popularity, known_for, profile_path }) => {
 
         const knowFromMovies = known_for.map((el, index) => {
             return (
-                <li key={index}>{el.title}</li>
+                <li className="actor_list" key={index}>{el.title}</li>
             )
+
         })
+
         return (
             <div className="actor_container" key={id}>
-                <p>{name}</p>
-                <p>{popularity}</p>
+                <p className="actor_name">{name}</p>
                 <ul>{knowFromMovies}</ul>
-                {profile_path ? < img className="actor_img" alt="aktor" src={`https://image.tmdb.org/t/p/w185${profile_path}`} /> : <img src={noPhoto} alt="empty" />}
+                {profile_path ? < img className="actor_img" alt="aktor" src={`https://image.tmdb.org/t/p/w185${profile_path}`} /> : <img className="actor_img" src={noPhoto} alt="empty" />}
+                <p className="actor_popularity">{popularity}</p>
             </div>
         )
     }) : null
