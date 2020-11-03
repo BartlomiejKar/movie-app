@@ -14,7 +14,7 @@ const Actors = ({ ApiKey }) => {
         const value = e.target.value
         setValue(value)
         const fetchData = async () => {
-            const response = await fetch(`https://api.themoviedb.org/3/search/person?api_key=${ApiKey}&language=en-US&query=${value}&page=1&include_adult=false`);
+            const response = await fetch(`https://api.themoviedb.org/3/search/person?api_key=${ApiKey}&language=en-US&query=${value ? value : " "}&page=1&include_adult=false`);
             const data = await response.json()
             const results = data.results
             setActors(results)
@@ -43,9 +43,12 @@ const Actors = ({ ApiKey }) => {
     }) : null
 
 
+
+
     return (
         <>
-            < p >Aktorzy</p >
+            <h4>Aktorzy</h4>
+            < p >Wpisz imię aktora</p >
             <input placeholder="wyszukaj aktora" value={value} onChange={handleSearchActor} type="text" />
             {ActorsArray}
         </>
