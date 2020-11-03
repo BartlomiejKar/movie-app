@@ -35,7 +35,7 @@ const Actors = ({ ApiKey }) => {
         return (
             <div className="actor_container" key={id}>
                 <p className="actor_name">{name}</p>
-                <ul>{knowFromMovies}</ul>
+                <ul className="actor_ul-list">{knowFromMovies}</ul>
                 {profile_path ? < img className="actor_img" alt="aktor" src={`https://image.tmdb.org/t/p/w185${profile_path}`} /> : <img className="actor_img" src={noPhoto} alt="empty" />}
                 <p className="actor_popularity">{popularity}</p>
             </div>
@@ -50,7 +50,10 @@ const Actors = ({ ApiKey }) => {
             <h4>Aktorzy</h4>
             < p >Wpisz imię aktora</p >
             <input placeholder="wyszukaj aktora" value={value} onChange={handleSearchActor} type="text" />
-            {ActorsArray}
+            <div className="container">
+                {ActorsArray}
+            </div>
+
         </>
 
     )
