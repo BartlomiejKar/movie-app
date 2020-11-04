@@ -14,7 +14,7 @@ class App extends Component {
     movies: [],
     search: "",
     trending: [],
-    ApiKey: "5259c8949c37b92e4bfb71d3a1948220"
+    ApiKey: "5259c8949c37b92e4bfb71d3a1948220",
   }
 
 
@@ -35,8 +35,6 @@ class App extends Component {
       })
     }
     fetchData()
-
-
   }
 
 
@@ -58,6 +56,8 @@ class App extends Component {
   }
   render() {
     const { ApiKey } = this.state
+
+
     return (
       <>
         <nav className="navigation">
@@ -86,9 +86,9 @@ class App extends Component {
             <Trending popular={this.state.trending} />
           </h4> */}
         </div>
-        <div>
+        {/* <div>
           <Actors ApiKey={ApiKey} />
-        </div>
+        </div> */}
       </>
     )
   }
