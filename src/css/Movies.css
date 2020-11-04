@@ -10,8 +10,12 @@ grid-template-columns: repeat(4, 1fr);
     border: 3px solid rgba(28,110,164,0.39);
     border-radius: 13px;
     margin: 5px;
-    background-color: #f9f8f8
-    
+    background-color: #f9f8f8;
+    cursor: pointer;
+    transition: transform 1s;
+}
+.single_movie:hover{
+    transform: scale(1.05,1.05);
 }
 .single_movie-title{
     min-height: 55px;
