@@ -60,12 +60,14 @@ class App extends Component {
     const { ApiKey } = this.state
     return (
       <>
+        <nav className="navigation">
+          <a href="#search" className="navigation__link">Wyszukaj film</a>
+          <a href="#actors" className="navigation__link">Aktorzy</a>
+          <a href="#popular" className="navigation__link">Najpopularniejsze filmy tygodnia</a>
+        </nav>
         <header className="header">
           <img className="header__logo" src={filmy} alt="logo" />
           <h1 className="header__title">MOVIE BROWSER</h1>
-          <nav className="navigation">
-            <a href="#popular" className="navigation__link">Najpopularniejsze filmy tygodnia</a>
-          </nav>
         </header>
         <div className="search">
           <label htmlFor="search"><strong>Wyszukaj film</strong></label>
