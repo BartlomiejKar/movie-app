@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './css/App.css';
-import Movies from "./Movies"
+import Movies from "./Movies";
+import Modal from "./Modal.js";
 // import Trending from "./Trending"
 import Actors from "./Actors"
 import filmy from "./filmy.jpeg"
@@ -15,9 +16,26 @@ class App extends Component {
     search: "",
     trending: [],
     ApiKey: "5259c8949c37b92e4bfb71d3a1948220",
+    description: "",
+    title: "",
+    modal: false
   }
 
 
+
+  showInformationAboutMovie = (id, description, title) => {
+    this.setState({
+      description: description,
+      title: title,
+      modal: true
+    })
+
+  }
+  closeInformationAboutMovie = () => {
+    this.setState({
+      modal: false
+    })
+  }
 
 
   handleChange = (e) => {
@@ -55,8 +73,9 @@ class App extends Component {
     this.GetMovies()
   }
   render() {
-    const { ApiKey } = this.state
+    const { ApiKey, modal, description, title } = this.state
 
+    const results = modal ? <Modal description={description} title={title} closeInformationAboutMovie={this.closeInformationAboutMovie} /> : <Movies showInformationAboutMovie={this.showInformationAboutMovie} movies={this.state.movies} />
 
     return (
       <>
@@ -74,9 +93,7 @@ class App extends Component {
           <input className="search__input" onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
         </div>
         <div >
-          <h4 >
-            <Movies movies={this.state.movies} />
-          </h4>
+          {results}
         </div>
         <div >
           {/* <strong>
