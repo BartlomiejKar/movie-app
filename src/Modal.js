@@ -1,10 +1,18 @@
 import React from 'react';
 
-const Modal = ({ id, description }) => {
+import "./css/Modal.css"
+
+const Modal = ({ id, description, title, closeInformationAboutMovie }) => {
 
 
     return (
-        <div><p>informacje modal {id} oraz {description}</p></div>
+        <div className="container_modal">
+            <h4 className="container_modal-title">{title}</h4>
+            <div className="container_modal-description">
+                <p>{description}</p>
+            </div>
+            <button onClick={closeInformationAboutMovie} className="container_modal-button">Close</button>
+        </div>
     )
 }
 
