@@ -80,9 +80,11 @@ class App extends Component {
     return (
       <>
         <nav className="navigation">
-          <a href="#search" className="navigation__link">Wyszukaj film</a>
-          <a href="#actors" className="navigation__link">Aktorzy</a>
-          <a href="#popular" className="navigation__link">Najpopularniejsze filmy tygodnia</a>
+          <ul className="navigation_ul">
+            <li className="navigation_li"><a href="#search" className="navigation__link">Wyszukaj film</a></li>
+            <li className="navigation_li"><a href="#actors" className="navigation__link">Aktorzy</a></li>
+            <li className="navigation_li"><a href="#popular" className="navigation__link">Najpopularniejsze filmy tygodnia</a></li>
+          </ul>
         </nav>
         <header className="header">
           <img className="header__logo" src={filmy} alt="logo" />
