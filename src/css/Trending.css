@@ -1,0 +1,23 @@
+.trending_title {
+font-size: 1.6rem;
+text-align: center;
+}
+
+.trending_container-movies {
+margin-top: 10px;
+display: grid;
+grid-template-columns: 1fr 1fr
+}
+
+.trending_container {
+margin: 10px auto
+}
+
+.trending_movieName {
+padding: 5px;
+text-align: center;
+}
+
+.trending_img {
+    margin: 20px auto;
+}

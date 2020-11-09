@@ -97,14 +97,10 @@ class App extends Component {
         <div >
           {results}
         </div>
-        <div >
-          <strong>
-            Najpopularniejsze filmy w tygodniu:
-          </strong>
-          <h4 id="popular">
-            <Trending popular={this.state.trending} />
+        <h4 className='trending_title'>
+          Najpopularniejsze filmy w tygodniu:
           </h4>
-        </div>
+        <Trending popular={this.state.trending} />
         {/* <div>
           <Actors ApiKey={ApiKey} />
         </div> */}
