@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './css/App.css';
 import Movies from "./Movies";
 import Modal from "./Modal.js";
-// import Trending from "./Trending"
+import Trending from "./Trending"
 import Actors from "./Actors"
 import filmy from "./filmy.jpeg"
 
@@ -88,22 +88,22 @@ class App extends Component {
         </nav>
         <header className="header">
           <img className="header__logo" src={filmy} alt="logo" />
-          <h1 className="header__title">MOVIE BROWSER</h1>
+          <h1 className="header__title">Filmowa Baza</h1>
         </header>
-        <div className="search">
+        {/* <div className="search">
           <label htmlFor="search"><strong>Wyszukaj film</strong></label>
           <input className="search__input" onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
-        </div>
+        </div> */}
         <div >
           {results}
         </div>
         <div >
-          {/* <strong>
+          <strong>
             Najpopularniejsze filmy w tygodniu:
           </strong>
           <h4 id="popular">
             <Trending popular={this.state.trending} />
-          </h4> */}
+          </h4>
         </div>
         {/* <div>
           <Actors ApiKey={ApiKey} />
