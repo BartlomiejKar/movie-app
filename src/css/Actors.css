@@ -1,3 +1,16 @@
+.actors_title {
+    text-align: center;
+    font-size: 1.6rem;
+}
+.actors_input-container{
+  text-align: center;
+  margin-top: 10px;
+}
+.actors_input {
+   text-align: center;
+   border-radius: 10px;
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

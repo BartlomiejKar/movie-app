@@ -90,10 +90,10 @@ class App extends Component {
           <img className="header__logo" src={filmy} alt="logo" />
           <h1 className="header__title">Filmowa Baza</h1>
         </header>
-        {/* <div className="search">
+        <div className="search">
           <label htmlFor="search"><strong>Wyszukaj film</strong></label>
           <input className="search__input" onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
-        </div> */}
+        </div>
         <div >
           {results}
         </div>
@@ -101,9 +101,9 @@ class App extends Component {
           Najpopularniejsze filmy w tygodniu:
           </h4>
         <Trending popular={this.state.trending} />
-        {/* <div>
+        <div>
           <Actors ApiKey={ApiKey} />
-        </div> */}
+        </div>
       </>
     )
   }
