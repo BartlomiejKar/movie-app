@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Link } from "react-router-dom"
+
 import './css/App.css';
 import Movies from "./Movies";
 import Modal from "./Modal.js";
@@ -78,33 +80,40 @@ class App extends Component {
     const results = modal ? <Modal description={description} title={title} closeInformationAboutMovie={this.closeInformationAboutMovie} /> : <Movies showInformationAboutMovie={this.showInformationAboutMovie} movies={this.state.movies} />
 
     return (
-      <>
-        <nav className="navigation">
-          <ul className="navigation_ul">
-            <li className="navigation_li"><a href="#search" className="navigation__link">Wyszukaj film</a></li>
-            <li className="navigation_li"><a href="#actors" className="navigation__link">Aktorzy</a></li>
-            <li className="navigation_li"><a href="#popular" className="navigation__link">Najpopularniejsze filmy tygodnia</a></li>
-          </ul>
-        </nav>
-        <header className="header">
-          <img className="header__logo" src={filmy} alt="logo" />
-          <h1 className="header__title">Filmowa Baza</h1>
-        </header>
-        <div className="search">
-          <label htmlFor="search"><strong>Wyszukaj film</strong></label>
-          <input className="search__input" onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
-        </div>
-        <div >
-          {results}
-        </div>
-        <h4 className='trending_title'>
-          Najpopularniejsze filmy w tygodniu:
+      <BrowserRouter>
+        <>
+          <nav className="navigation">
+            <ul className="navigation_ul">
+              <li className="navigation_li">
+                <Link to="/" className="navigation__link">Wyszukaj film</Link>
+              </li>
+              <li className="navigation_li">
+                <Link to="/actors" className="navigation__link">Aktorzy</Link>
+              </li>
+              <li className="navigation_li">
+                <Link to="/popular" className="navigation__link">Najpopularniejsze filmy tygodnia</Link>
+              </li>
+            </ul>
+          </nav>
+          <header className="header">
+            <img className="header__logo" src={filmy} alt="logo" />
+          </header>
+          <div className="search">
+            <label htmlFor="search"><strong>Wyszukaj film</strong></label>
+            <input className="search__input" onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
+          </div>
+          <div >
+            {results}
+          </div>
+          {/* <h4 className='trending_title'>
+            Najpopularniejsze filmy w tygodniu:
           </h4>
-        <Trending popular={this.state.trending} />
-        <div>
-          <Actors ApiKey={ApiKey} />
-        </div>
-      </>
+          <Trending popular={this.state.trending} />
+          <div>
+            <Actors ApiKey={ApiKey} />
+          </div> */}
+        </>
+      </BrowserRouter>
     )
   }
 }

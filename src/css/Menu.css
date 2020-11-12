@@ -24,10 +24,6 @@
   box-shadow:  0 0 10px #000000
 }
 
-.header__title {
-  font-size: 1.6rem;
-  margin: 50px auto
-}
 
 .navigation {
  position: sticky;
