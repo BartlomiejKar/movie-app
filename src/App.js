@@ -3,11 +3,13 @@ import React, { Component } from 'react';
 
 import './css/App.css';
 import Navigation from './component/Navigation';
+import Header from './component/Header';
+import SearchComponent from "./component/SearchComponent"
 import Movies from "./component/Movies";
 import Modal from "./component/Modal.js";
 import Trending from "./component/Trending"
 import Actors from "./component/Actors"
-import Header from './component/Header';
+
 
 
 
@@ -77,7 +79,7 @@ class App extends Component {
     this.GetMovies()
   }
   render() {
-    const { ApiKey, modal, description, title } = this.state
+    const { ApiKey, modal, description, title, search } = this.state
 
     const results = modal ? <Modal description={description} title={title} closeInformationAboutMovie={this.closeInformationAboutMovie} /> : <Movies showInformationAboutMovie={this.showInformationAboutMovie} movies={this.state.movies} />
 
@@ -85,10 +87,7 @@ class App extends Component {
       <>
         <Navigation />
         <Header />
-        <div className="search">
-          <label htmlFor="search"><strong>Wyszukaj film</strong></label>
-          <input className="search__input" onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
-        </div>
+        <SearchComponent change={this.handleChange} />
         <div >
           {results}
         </div>
