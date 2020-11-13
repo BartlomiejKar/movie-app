@@ -82,15 +82,15 @@ class App extends Component {
   render() {
     const { ApiKey, modal, description, title, movies } = this.state
     return (
-      <>
+      <div className="body__container">
         <Navigation />
         <Header />
         <SearchComponent change={this.handleChange} />
         <Results modal={modal} description={description} title={title} closeInformationAboutMovie={this.closeInformationAboutMovie} showInformationAboutMovie={this.showInformationAboutMovie} movies={movies} />
-        <Trending popular={this.state.trending} />
-        <Actors ApiKey={ApiKey} />
+        {/* <Trending popular={this.state.trending} />
+        <Actors ApiKey={ApiKey} /> */}
         <Footer />
-      </>
+      </div>
     )
   }
 }
