@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 // import { BrowserRouter, Link, Route, Switch } from "react-router-dom"
 
-// import './css/App.css';
+import './css/App.css';
+
 import Navigation from './component/Navigation';
 import Header from './component/Header';
 import SearchComponent from "./component/SearchComponent"
 import Results from "./component/Results"
-import Movies from "./component/Movies";
-import Modal from "./component/Modal.js";
 import Trending from "./component/Trending"
 import Actors from "./component/Actors"
+import Footer from "./component/Footer"
 
 
 
@@ -89,6 +89,7 @@ class App extends Component {
         <Results modal={modal} description={description} title={title} closeInformationAboutMovie={this.closeInformationAboutMovie} showInformationAboutMovie={this.showInformationAboutMovie} movies={movies} />
         <Trending popular={this.state.trending} />
         <Actors ApiKey={ApiKey} />
+        <Footer />
       </>
     )
   }
