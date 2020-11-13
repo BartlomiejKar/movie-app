@@ -1,0 +1,28 @@
+.navigation {
+    position: sticky;
+    top:0;
+    grid-column: 1/5;
+    height: 3.5rem;
+    background-color: #2b2d42;
+    z-index: 2;
+    text-align: center;
+   }
+   .navigation_ul{
+     display: flex;
+   
+   }
+   .navigation_li{
+     list-style: none;
+     margin: 10px auto;
+   }
+   
+   .navigation__link {
+    text-decoration: none;
+    color: white;
+    padding: 2rem;
+    transition: ease-out .7s;
+   }
+   .navigation__link:hover {
+   font-size: 1.05rem;
+   }
+   

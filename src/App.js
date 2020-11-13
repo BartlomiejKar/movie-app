@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom"
+// import { BrowserRouter, Link, Route, Switch } from "react-router-dom"
 
 import './css/App.css';
-import Movies from "./Movies";
-import Modal from "./Modal.js";
-import Trending from "./Trending"
-import Actors from "./Actors"
-import filmy from "./filmy.jpeg"
+import Navigation from './component/Navigation';
+import Movies from "./component/Movies";
+import Modal from "./component/Modal.js";
+import Trending from "./component/Trending"
+import Actors from "./component/Actors"
+import filmy from "./img/filmy.jpeg"
+
 
 
 
@@ -58,7 +60,7 @@ class App extends Component {
   }
 
 
-  ErrorPage = () => <h1>Strona nie istnieje</h1>
+  // ErrorPage = () => <h1>Strona nie istnieje</h1>
 
 
   GetMovies = () => {
@@ -80,48 +82,34 @@ class App extends Component {
     const results = modal ? <Modal description={description} title={title} closeInformationAboutMovie={this.closeInformationAboutMovie} /> : <Movies showInformationAboutMovie={this.showInformationAboutMovie} movies={this.state.movies} />
 
     return (
-      <BrowserRouter>
-        <>
-          <nav className="navigation">
-            <ul className="navigation_ul">
-              <li className="navigation_li">
-                <Link to="/" className="navigation__link">Wyszukaj film</Link>
-              </li>
-              <li className="navigation_li">
-                <Link to="/actors" className="navigation__link">Aktorzy</Link>
-              </li>
-              <li className="navigation_li">
-                <Link to="/popular" className="navigation__link">Najpopularniejsze filmy tygodnia</Link>
-              </li>
-            </ul>
-          </nav>
-          <header className="header">
-            <img className="header__logo" src={filmy} alt="logo" />
-          </header>
-          <div className="search">
-            <label htmlFor="search"><strong>Wyszukaj film</strong></label>
-            <input className="search__input" onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
-          </div>
-          <div >
-            {results}
-          </div>
-          <section>
-            <Switch>
+      <>
+        <Navigation />
+        <header className="header">
+          <img className="header__logo" src={filmy} alt="logo" />
+        </header>
+        <div className="search">
+          <label htmlFor="search"><strong>Wyszukaj film</strong></label>
+          <input className="search__input" onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
+        </div>
+        <div >
+          {results}
+        </div>
+        {/* <section>
+            
               <Route path="/" exact component={results} />
               <Route path="/popular" component={Trending} />
               <Route path="/actors" component={Actors} />
               <Route component={this.ErrorPage} />
-            </Switch>
-          </section>
-          {/* <h4 className='trending_title'>
+            
+          </section> */}
+        {/* <h4 className='trending_title'>
             Najpopularniejsze filmy w tygodniu:
           </h4>
           <Trending popular={this.state.trending} />
           <div>
             <Actors ApiKey={ApiKey} />
           </div> */}
-        </>
-      </BrowserRouter>
+      </>
     )
   }
 }
