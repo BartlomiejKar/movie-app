@@ -1,6 +1,6 @@
 import React from 'react';
-import "./css/Movies.css"
-import noPhoto from "./noPhoto.jpg"
+import "../css/Movies.css"
+import noPhoto from "../img/noPhoto.jpg"
 
 
 const Movies = ({ movies = [], showInformationAboutMovie }) => {

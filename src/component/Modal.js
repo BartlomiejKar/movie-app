@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "./css/Modal.css"
+import "../css/Modal.css"
 
 const Modal = ({ description, title, closeInformationAboutMovie }) => {
 

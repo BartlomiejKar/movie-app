@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 
-import "./css/Actors.css"
-import noPhoto from "./noPhoto.jpg"
+import "../css/Actors.css"
+import noPhoto from "../img/noPhoto.jpg"
 
 
 const Actors = ({ ApiKey }) => {

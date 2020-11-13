@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 // import { BrowserRouter, Link, Route, Switch } from "react-router-dom"
 
-import './css/App.css';
+// import './css/App.css';
 import Navigation from './component/Navigation';
 import Header from './component/Header';
 import SearchComponent from "./component/SearchComponent"
+import Results from "./component/Results"
 import Movies from "./component/Movies";
 import Modal from "./component/Modal.js";
 import Trending from "./component/Trending"
@@ -79,33 +80,15 @@ class App extends Component {
     this.GetMovies()
   }
   render() {
-    const { ApiKey, modal, description, title, search } = this.state
-
-    const results = modal ? <Modal description={description} title={title} closeInformationAboutMovie={this.closeInformationAboutMovie} /> : <Movies showInformationAboutMovie={this.showInformationAboutMovie} movies={this.state.movies} />
-
+    const { ApiKey, modal, description, title, movies } = this.state
     return (
       <>
         <Navigation />
         <Header />
         <SearchComponent change={this.handleChange} />
-        <div >
-          {results}
-        </div>
-        {/* <section>
-            
-              <Route path="/" exact component={results} />
-              <Route path="/popular" component={Trending} />
-              <Route path="/actors" component={Actors} />
-              <Route component={this.ErrorPage} />
-            
-          </section> */}
-        {/* <h4 className='trending_title'>
-            Najpopularniejsze filmy w tygodniu:
-          </h4>
-          <Trending popular={this.state.trending} />
-          <div>
-            <Actors ApiKey={ApiKey} />
-          </div> */}
+        <Results modal={modal} description={description} title={title} closeInformationAboutMovie={this.closeInformationAboutMovie} showInformationAboutMovie={this.showInformationAboutMovie} movies={movies} />
+        <Trending popular={this.state.trending} />
+        <Actors ApiKey={ApiKey} />
       </>
     )
   }

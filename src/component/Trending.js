@@ -1,5 +1,6 @@
 import React from 'react';
 
+import "../css/Trending.css"
 
 const Trending = ({ popular = [] }) => {
     const trending = (popular).map(el => (
@@ -12,9 +13,14 @@ const Trending = ({ popular = [] }) => {
     ))
 
     return (
-        <div className="trending_container-movies">
-            {trending}
-        </div>
+        <>
+            <h4 className='trending_title'>
+                Najpopularniejsze filmy w tygodniu:
+                </h4>
+            <div className="trending_container-movies">
+                {trending}
+            </div>
+        </>
 
 
     )
