@@ -7,7 +7,7 @@ import Movies from "./component/Movies";
 import Modal from "./component/Modal.js";
 import Trending from "./component/Trending"
 import Actors from "./component/Actors"
-import filmy from "./img/filmy.jpeg"
+import Header from './component/Header';
 
 
 
@@ -84,9 +84,7 @@ class App extends Component {
     return (
       <>
         <Navigation />
-        <header className="header">
-          <img className="header__logo" src={filmy} alt="logo" />
-        </header>
+        <Header />
         <div className="search">
           <label htmlFor="search"><strong>Wyszukaj film</strong></label>
           <input className="search__input" onChange={this.handleChange} type="text" placeholder="Wpisz tytuł filmu" id="search" value={this.state.search}></input>
