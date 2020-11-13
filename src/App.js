@@ -82,7 +82,7 @@ class App extends Component {
   render() {
     const { ApiKey, modal, description, title, movies } = this.state
     return (
-      <div className="body__container">
+      <>
         <Navigation />
         <Header />
         <SearchComponent change={this.handleChange} />
@@ -90,7 +90,7 @@ class App extends Component {
         {/* <Trending popular={this.state.trending} />
         <Actors ApiKey={ApiKey} /> */}
         <Footer />
-      </div>
+      </>
     )
   }
 }
