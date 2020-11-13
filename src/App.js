@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Link } from "react-router-dom"
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom"
 
 import './css/App.css';
 import Movies from "./Movies";
@@ -58,7 +58,7 @@ class App extends Component {
   }
 
 
-
+  ErrorPage = () => <h1>Strona nie istnieje</h1>
 
 
   GetMovies = () => {
@@ -105,6 +105,14 @@ class App extends Component {
           <div >
             {results}
           </div>
+          <section>
+            <Switch>
+              <Route path="/" exact component={results} />
+              <Route path="/popular" component={Trending} />
+              <Route path="/actors" component={Actors} />
+              <Route component={this.ErrorPage} />
+            </Switch>
+          </section>
           {/* <h4 className='trending_title'>
             Najpopularniejsze filmy w tygodniu:
           </h4>
