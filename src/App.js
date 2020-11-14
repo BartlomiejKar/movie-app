@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from "react-router-dom"
+import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 import './css/App.css';
 
@@ -86,18 +86,20 @@ class App extends Component {
         <BrowserRouter>
           <Navigation />
           <Header />
-          <Route exact path="/" render={() => {
-            return (
-              <>
-                <SearchComponent change={this.handleChange} />
-                <Results modal={modal} description={description} title={title} closeInformationAboutMovie={this.closeInformationAboutMovie} showInformationAboutMovie={this.showInformationAboutMovie} movies={movies} />
-              </>
-            )
-          }
-          } />
-          <Route path="/popular" render={() => <Trending popular={this.state.trending} />} />
-          <Route path="/actors" render={() => <Actors ApiKey={ApiKey} />} />
-          <Route path="" component={this.ErrorPage} />
+          <Switch>
+            <Route exact path="/" render={() => {
+              return (
+                <>
+                  <SearchComponent change={this.handleChange} />
+                  <Results modal={modal} description={description} title={title} closeInformationAboutMovie={this.closeInformationAboutMovie} showInformationAboutMovie={this.showInformationAboutMovie} movies={movies} />
+                </>
+              )
+            }
+            } />
+            <Route path="/popular" render={() => <Trending popular={this.state.trending} />} />
+            <Route path="/actors" render={() => <Actors ApiKey={ApiKey} />} />
+            <Route path="" component={this.ErrorPage} />
+          </Switch>
           <Footer />
         </BrowserRouter>
       </>

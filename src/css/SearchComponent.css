@@ -7,6 +7,9 @@
     margin-left: 1.4rem;
     border: 1px solid transparent;
   }
+  .search__input::placeholder {
+    text-align: center;
+}
   
   .search::after {
     content: "";

@@ -47,7 +47,6 @@ const Actors = ({ ApiKey }) => {
 
     return (
         <>
-            <h4 className="actors_title">Aktorzy</h4>
             <div className="actors_input-container">
                 <input className="actors_input" placeholder="wyszukaj aktora" value={value} onChange={handleSearchActor} type="text" />
             </div>
