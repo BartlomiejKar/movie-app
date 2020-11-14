@@ -83,7 +83,7 @@ class App extends Component {
     const { ApiKey, modal, description, title, movies } = this.state
     return (
       <>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Navigation />
           <Header />
           <Switch>
