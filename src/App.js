@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { BrowserRouter, Link, Route, Switch } from "react-router-dom"
+import { BrowserRouter, Route } from "react-router-dom"
 
 import './css/App.css';
 
@@ -83,13 +83,22 @@ class App extends Component {
     const { ApiKey, modal, description, title, movies } = this.state
     return (
       <>
-        <Navigation />
-        <Header />
-        <SearchComponent change={this.handleChange} />
-        <Results modal={modal} description={description} title={title} closeInformationAboutMovie={this.closeInformationAboutMovie} showInformationAboutMovie={this.showInformationAboutMovie} movies={movies} />
-        {/* <Trending popular={this.state.trending} />
-        <Actors ApiKey={ApiKey} /> */}
-        <Footer />
+        <BrowserRouter>
+          <Navigation />
+          <Header />
+          <Route exact path="/" render={() => {
+            return (
+              <>
+                <SearchComponent change={this.handleChange} />
+                <Results modal={modal} description={description} title={title} closeInformationAboutMovie={this.closeInformationAboutMovie} showInformationAboutMovie={this.showInformationAboutMovie} movies={movies} />
+              </>
+            )
+          }
+          } />
+          <Route path="/popular" render={() => <Trending popular={this.state.trending} />} />
+          <Route path="/actors" render={() => <Actors ApiKey={ApiKey} />} />
+          <Footer />
+        </BrowserRouter>
       </>
     )
   }
