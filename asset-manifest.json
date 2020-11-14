@@ -1,14 +1,15 @@
 {
-  "main.css": "/movie-app/static/css/main.1a5db1d1.chunk.css",
-  "main.js": "/movie-app/static/js/main.c3fb2e11.chunk.js",
-  "main.js.map": "/movie-app/static/js/main.c3fb2e11.chunk.js.map",
+  "main.css": "/movie-app/static/css/main.39416aea.chunk.css",
+  "main.js": "/movie-app/static/js/main.4a39466e.chunk.js",
+  "main.js.map": "/movie-app/static/js/main.4a39466e.chunk.js.map",
   "runtime~main.js": "/movie-app/static/js/runtime~main.7dd63718.js",
   "runtime~main.js.map": "/movie-app/static/js/runtime~main.7dd63718.js.map",
-  "static/js/2.100e50e4.chunk.js": "/movie-app/static/js/2.100e50e4.chunk.js",
-  "static/js/2.100e50e4.chunk.js.map": "/movie-app/static/js/2.100e50e4.chunk.js.map",
+  "static/js/2.e145601a.chunk.js": "/movie-app/static/js/2.e145601a.chunk.js",
+  "static/js/2.e145601a.chunk.js.map": "/movie-app/static/js/2.e145601a.chunk.js.map",
   "index.html": "/movie-app/index.html",
-  "precache-manifest.4a653e3b84771cb8e45b296e1a5f935a.js": "/movie-app/precache-manifest.4a653e3b84771cb8e45b296e1a5f935a.js",
+  "precache-manifest.3bb605d47a34fd53ec01f45dcc8dd960.js": "/movie-app/precache-manifest.3bb605d47a34fd53ec01f45dcc8dd960.js",
   "service-worker.js": "/movie-app/service-worker.js",
-  "static/css/main.1a5db1d1.chunk.css.map": "/movie-app/static/css/main.1a5db1d1.chunk.css.map",
+  "static/css/main.39416aea.chunk.css.map": "/movie-app/static/css/main.39416aea.chunk.css.map",
+  "static/media/Header.css": "/movie-app/static/media/avengers.7dcd71c5.jpg",
   "static/media/filmy.jpeg": "/movie-app/static/media/filmy.c25a838a.jpeg"
 }
