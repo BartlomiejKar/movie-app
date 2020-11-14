@@ -63,7 +63,7 @@ class App extends Component {
   }
 
 
-  // ErrorPage = () => <h1>Strona nie istnieje</h1>
+  ErrorPage = () => <h1>Strona nie istnieje</h1>
 
 
   GetMovies = () => {
@@ -97,6 +97,7 @@ class App extends Component {
           } />
           <Route path="/popular" render={() => <Trending popular={this.state.trending} />} />
           <Route path="/actors" render={() => <Actors ApiKey={ApiKey} />} />
+          <Route path="" component={this.ErrorPage} />
           <Footer />
         </BrowserRouter>
       </>
