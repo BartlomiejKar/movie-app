@@ -28,3 +28,9 @@ img{
 .single_movie-vote{
     min-height: 40px;
 }
+
+@media (max-width: 695px) {
+    .container_movies {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

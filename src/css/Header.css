@@ -5,4 +5,12 @@
     opacity: 0.4;
   }
  
+  @media (max-width: 695px) {
+   .header {
+     height: 20vh;
+     background-size: cover;
+     background-repeat: no-repeat;
+     
+  }
+}
  
