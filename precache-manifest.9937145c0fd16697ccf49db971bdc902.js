@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "693be050d3b214a65e96",
-    "url": "/movie-app/static/css/main.39416aea.chunk.css"
+    "revision": "9ee5fec5f6985a0cd524",
+    "url": "/movie-app/static/css/main.382d6154.chunk.css"
   },
   {
-    "revision": "693be050d3b214a65e96",
+    "revision": "9ee5fec5f6985a0cd524",
     "url": "/movie-app/static/js/main.4a39466e.chunk.js"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/movie-app/static/media/avengers.7dcd71c5.jpg"
   },
   {
-    "revision": "c5e5be5c7e99027c3a721b998496708c",
+    "revision": "930feaf4f2ba9427927d2dc16003102b",
     "url": "/movie-app/index.html"
   }
 ];
