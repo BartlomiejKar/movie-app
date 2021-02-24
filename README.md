@@ -1,6 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 # Movie app
 
+![Image of Yaktocat]()
+
 Technologies I used:
 * React,
 * React-router-dom,
