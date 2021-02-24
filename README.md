@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 # Movie app
 
-![Image of Yaktocat]()
+![movieapp](https://github.com/BartlomiejKar/movie-app/blob/master/src/imageReadme/movieapp.jpg)
 
 Technologies I used:
 * React,
