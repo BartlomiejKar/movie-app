@@ -11,3 +11,6 @@ Technologies I used:
 * async/await fetch,
 * JavaScript (ES6+)
 * Git 
+
+
+## [DEMO](https://bartlomiejkar.github.io/movie-app/)
